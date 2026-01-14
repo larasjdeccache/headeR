@@ -1,0 +1,178 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# headeR <img src="man/figures/logo.png" align="right" height="139" style="float:right; height:139px;"/>
+
+<!-- badges: start -->
+
+[![Madrid Code
+2025](https://img.shields.io/badge/Madrid%20Code-2025-green.svg)](https://www.iaptglobal.org/_functions/code/madrid)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![Project Status:
+Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![R-CMD-check](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml)
+
+<!-- badges: end -->
+
+A tool for standardized taxonomic headings according to the
+International Code of Nomenclature for Algae, Fungi, and Plants (Madrid
+Code; Turland et al. 2025)
+
+## 🌿 About
+
+Working with big plant genera (\> 500 species), or even those genera
+containing over 300 species, is a challenging for taxonomists and to
+ensure proper nomenclatural treatment, it is necessary to construct
+taxonomic headers presenting names, authors, works, synonyms, and type
+materials. The `headeR` package was developed to assist such taxonomists
+in generating taxonomic headers for their synopses, monographs, and
+revisions.
+
+The package formats headers according to Taxon and Willdenowia journals
+and was designed to handle complex nomenclatural cases according to the
+Madrid Code (Turland et al. 2025).
+
+We are developing support for the journals Systematic Botany, Plant
+Ecology and Evolution, and Phytotaxa.
+
+`headeR` was developed as part of the project: “Systematics, Evolution,
+and Biogeography of *Ouratea* Aubl. (Ochnaceae)”.
+
+## ⚙️️ Installation
+
+You can install the development version of headeR from
+[GitHub](https://github.com/larasjdeccache/headeR) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("larasjdeccache/headeR")
+```
+
+## 📋 Data Requirements
+
+To ensure the functions work correctly, your data must follow a specific
+structure (based on Darwin Core). The package includes a comprehensive
+dataset (`heading_data`) as a reference.
+
+<small>
+
+| scientificName | status | namePublishedIn | series | volume | suppl | issue | page | namePublishedInYear | basisOfRecord | illustrationSource | digitalObject | illustrationPublishedIn | collectionCode | barcode | recordedBy | recordNumber | day | inferredDay | month | inferredMonth | year | inferredYear | phenology | country | inferredCountry | stateProvince | inferredStateProvince | municipality | inferredMunicipality | locality | inferredLocality | latitude | longitude | altitude | sheetNum | category | view | viewPhoto | typeDesignated | typeAuthorship | typePublishedIn | typeSeries | typeVolume | typeSuppl | typeIssue | typePage | typePublishedInYear | basionym | acceptedScientificName | notes |
+|:---|:---|:---|---:|---:|:---|---:|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|---:|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|---:|:---|---:|---:|---:|:---|:---|:---|
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | UB | UB00040114 | J. Ratter, S. Bridgewater, J. Fonseca Filho, R. Farias | 8115 | 16 | NA | Nov. | NA | 1998 | NA | fr. | Brazil | NA |  | Tocantins | Mateiros |  | 53 km from Ponte Alta on rd. to Mateiros |  | 10°30’S | 47°11’W |  | NA | holotype | ! |  |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | E | E00104484 | J. Ratter, S. Bridgewater, J. Fonseca Filho, R. Farias | 8115 | 16 | NA | Nov. | NA | 1998 | NA | fr. | Brazil | NA |  | Tocantins | Mateiros |  | 53 km from Ponte Alta on rd. to Mateiros |  | 10°30’S | 47°11’W |  | NA | isotype | ! | ! |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | K | K001202174 | J. Ratter, S. Bridgewater, J. Fonseca Filho, R. Farias | 8115 | 16 | NA | Nov. | NA | 1998 | NA | fr. | Brazil | NA |  | Tocantins | Mateiros |  | 53 km from Ponte Alta on rd. to Mateiros |  | 10°30’S | 47°11’W |  | NA | isotype | ! | ! |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | UB | UB0040115 | R. Farias, J. Fonseca Filho, S. Bridgewater, J. A. Ratter | 157 | 15 | NA | Nov. | NA | 1998 | NA | fr. | Brazil | NA | Tocantins |  | Mateiros |  |  |  | 10°24’S | 47°05’W | 450 | NA | paratype | ! |  |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | UB | UB1272872 | A. B. Sampaio, P. L. Simpson Jr., R. Farias, L. C. Milhomens | 545 | 5 | NA | May | NA | 2001 | NA | fl. | Brazil | NA | Tocantins |  | Mateiros |  | Região do Jalapão. Dunas provenientes da erosão da Serra do Espírito Santo. |  | 10°35’S | 46°40’W |  | NA | paratype |  |  |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | UEC | UEC007608 | T. B. Cavalcanti, A. O. Scariot, A. C. Sevilha, G. Pereira-Silva, A. B. Sampaio | 2757 | 14 | NA | Jun. | NA | 2002 | NA | fl. & fr. | Brazil | NA | Tocantins |  | Mateiros |  | Parque Estadual do Jalapão. Estrada de terra Mateiros - Ponte Alta do Tocantins, à 15 km de Mateiros. |  | 10°35’19’’S | 46°31’42’’W | 500 | NA | paratype | ! |  |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+| Ouratea acicularis R.G.Chacon & K.Yamam. | correct name | Novon | NA | 18 | NA | NA | 398 | 2008 | preservedSpecimen |  |  |  | CEN | CEN00049190 | T. B. Cavalcanti, A. O. Scariot, A. C. Sevilha, G. Pereira-Silva, A. B. Sampaio | 2757 | 14 | NA | Jun. | NA | 2002 | NA | fl. & fr. | Brazil | NA | Tocantins |  | Mateiros |  | Parque Estadual do Jalapão. Estrada de terra Mateiros - Ponte Alta do Tocantins, à 15 km de Mateiros. |  | 10°35’19’’S | 46°31’42’’W | 500 | NA | paratype | ! |  |  |  |  | NA | NA | NA | NA | NA | NA | Ouratea acicularis R.G.Chacon & K.Yamam. | Ouratea acicularis R.G.Chacon & K.Yamam. |  |
+
+</small>
+
+### Download a Template
+
+You can export a template in CSV format to use as a starting point by
+running:
+
+``` r
+# This will save a 'template_header.csv' in your current working directory
+headeR::get_template("template_header.csv")
+```
+
+## 🔍 Usage
+
+`headeR` has only three main functions and 14 other auxiliary functions.
+The main functions are: `header_simple()`, `header_complete()` and
+`get_template()`.
+
+The first two have many processes in common. Based on the journal’s
+formatting style, they use auxiliary functions for:
+
+❈ Handling genus names, specific epithets, and infraspecific epithets;
+
+❈ Formatting cases such as hybrids;
+
+❈ Formatting the names’ publications;
+
+❈ Detecting and formatting homonyms;
+
+❈ Grouping and formatting homotypic and heterotypic synonyms (Madrid
+Code Art. 14.4);
+
+❈ **Export to .md or .docx (formatted in Times New Roman 12 pt).**
+
+### `header_simple()`: Generate standardized simple botanical taxonomic headings
+
+The primary function of the package. The `header_simple()` function
+automates the creation of basic taxonomic headings.
+
+``` r
+library(headeR)
+# Generate a simple header for a taxon
+header_simple(heading_data[1:7, ],
+              journal_format = "Taxon",
+              export_docx = FALSE)
+```
+
+#### Output exemple:
+
+------------------------------------------------------------------------
+
+**1**. ***Ouratea acicularis*** R.G.Chacon & K.Yamam. in Novon 18: 398.
+2008.
+
+------------------------------------------------------------------------
+
+### `header_complete()`: Generate standardized complete botanical taxonomic headings with type material
+
+It produces full taxonomic header suitable for monographs and revisions.
+
+Unlike , this function processes and formats type specimens information.
+
+``` r
+library(headeR)
+# Generate a complete header for a taxon
+header_complete(heading_data[1:7, ],
+                journal_format = "Taxon",
+                export_docx = FALSE)
+```
+
+#### Output exemple:
+
+------------------------------------------------------------------------
+
+**1**. ***Ouratea acicularis*** R.G.Chacon & K.Yamam. in Novon 18: 398.
+2008 – Holotype: Brazil. \[Tocantins\], Mateiros: 53 km from Ponte Alta
+on rd. to Mateiros, 16 Nov. 1998, *J. Ratter, S. Bridgewater, J. Fonseca
+Filho, R. Farias 8115* (UB \[UB00040114\]!; isotypes: E \[E00104484\]
+photo!, K \[K001202174\] photo!).
+
+------------------------------------------------------------------------
+
+## 🌱 Acknowledgments
+
+LSJD thanks to Coordenação de Aperfeiçoamento de Pessoal de Nível
+Superior (CAPES) for the PhD fellowship (process no.
+88887.948324/2024-00). LSJD PhD’s project on Ouratea is also supported
+by grants from the International Association for Plant Taxonomy
+(Research Grant 2024), the INCT-Herbário Virtual da Flora e dos Fungos
+(process no. 03/2024), and the Systematics Association and the Linnean
+Society (LinnéSys: Systematics Research Fund 2025).
+
+## 📖 Reference
+
+Turland NJ, Wiersema JH, Barrie FR, Gandhi KN, Gravendyck J, Greuter W,
+Hawksworth DL, Herendeen PS, Klopper RR, Knapp S, Kusber W-H, Li D-Z,
+May TW, Monro AM, Prado J, Price MJ, Smith GF, Zamora Señoret JC. 2025.
+International Code of Nomenclature for algae, fungi, and plants (Madrid
+Code). Regnum Vegetabile 162. Chicago: University of Chicago Press.
+<https://doi.org/10.7208/chicago/9780226839479.001.0001>
+
+## 🎓 Citation
+
+Deccache LSJ, Giacomin LL & Fraga CN (2026). *headeR: A tool for
+standardized taxonomic headings according to the International Code of
+Nomenclature for algae, fungi, and plants (Madrid Code)*. R package
+version 0.1.0, <https://github.com/laradeccache/headeR>.

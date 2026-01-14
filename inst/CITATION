@@ -1,0 +1,31 @@
+bibentry(
+  bibtype = "Manual",
+  title = "headeR: A tool for standardized taxonomic headings according to the International Code of Nomenclature for algae, fungi, and plants (Madrid Code)",
+  author = c(
+    person(
+      given = c("Lara", "Serpa", "Jaegge"),
+      family = "Deccache",
+      email = "larasjdeccache@gmail.com",
+      role = c("aut", "cre", "cph"),
+      comment = c(ORCID = "0000-0001-5701-0224")
+    ),
+    person(
+      given = c("Leandro", "Lacerda"),
+      family = "Giacomin",
+      email = "giacomin.leandro@gmail.com",
+      role = c("aut", "cph", "ths"),
+      comment = c(ORCID = "0000-0001-8862-4042")
+    ),
+    person(
+      given = c("Claudio", "Nicoletti de"),
+      family = "Fraga",
+      email = "cnfraga@jbrj.gov.br",
+      role = c("aut", "cph", "ths"),
+      comment = c(ORCID = "0000-0003-1254-4550")
+    )
+  ),
+  year = "2026",
+  note = "R package version 0.1.0",
+  url = "https://github.com/laradeccache/headeR",
+  header = "To cite headeR in publications, please use:"
+)

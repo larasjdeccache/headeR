@@ -1,0 +1,40 @@
+url: https://larasjdeccache.github.io/headeR/
+
+template:
+  params:
+    bootswatch: flatly
+    logo: man/figures/logo.png
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [github]
+  components:
+    intro:
+      text: Get Started
+      href: articles/headeR.html
+
+articles:
+  - title: Tutorial
+    contents:
+      - tutorial-headeR
+
+reference:
+  - title: Core Functions
+    desc: Automated taxonomic heading generation.
+    contents:
+      - header_simple
+      - header_complete
+  - title: Setup and Data
+    desc: Tools to help you get started with the package.
+    contents:
+      - get_template
+      - heading_data
+  - title: Helper Functions
+    desc: Formatting and parsing tools.
+    contents:
+      - format_name
+      - format_publication
+      - format_synonym
+      - format_type
+      - format_other_types

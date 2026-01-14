@@ -1,0 +1,38 @@
+Package: headeR
+Title: A tool for standardized taxonomic headings according to the International Code of Nomenclature for algae, fungi, and plants (Madrid Code)
+Version: 0.1.0
+Authors@R: c(
+    person(given = c("Lara", "Serpa", "Jaegge"),
+            family = "Deccache",
+            email = "larasjdeccache@gmail.com",
+            role = c("aut", "cre", "cph"),
+            comment = c(ORCID = "0000-0001-5701-0224")),
+    person(given = c("Leandro", "Lacerda"),
+            family = "Giacomin",
+            email = "giacomin.leandro@gmail.com",
+            role = c("aut", "cph", "ths"),
+            comment = c(ORCID = "0000-0001-8862-4042")),
+    person(given = c("Claudio", "Nicoletti de"),
+            family = "Fraga",
+            email = "cnfraga@jbrj.gov.br",
+            role = c("aut", "cph", "ths"),
+    comment = c(ORCID = "0000-0003-1254-4550"))
+    )
+Description: Provides automated tools for constructing standardized botanical taxonomic headings and synonymy blocks. It follows the International Code of Nomenclature for Algae, Fungi, and Plants (Madrid Code, 2025). The package handles italicization of scientific names, chronological sorting of synonyms, and journal-specific formatting for publications such as Taxon, Systematic Botany, and Willdenowia. Developed as part of the research on Systematics, Evolution, and Biogeography of Ouratea Aubl. (Ochnaceae).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+Sugests: dplyr,
+    graphics,
+    knitr,
+    methods,
+    stats,
+    utils
+Imports: 
+    rmarkdown
+SystemRequirements: Pandoc (>= 1.12.3)
