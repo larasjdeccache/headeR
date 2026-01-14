@@ -14,7 +14,6 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml)
-
 <!-- badges: end -->
 
 A tool for standardized taxonomic headings, in accordance with the

@@ -16,9 +16,7 @@ knitr::opts_chunk$set(
 # headeR <img src="man/figures/logo.png" align="right" height="139" style="float:right; height:139px;"/>
 
 <!-- badges: start -->
-
 [![Madrid Code 2025](https://img.shields.io/badge/Madrid%20Code-2025-green.svg)](https://www.iaptglobal.org/_functions/code/madrid) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![R-CMD-check](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/larasjdeccache/headeR/actions/workflows/R-CMD-check.yaml)
-
 <!-- badges: end -->
 
 A tool for standardized taxonomic headings, in accordance with the format of botanical journals and in light of the International Code of Nomenclature for Algae, Fungi and Plants (Madrid Code; Turland et al. 2025)
