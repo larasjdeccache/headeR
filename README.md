@@ -17,9 +17,10 @@ Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repost
 
 <!-- badges: end -->
 
-A tool for standardized taxonomic headings according to the
-International Code of Nomenclature for Algae, Fungi, and Plants (Madrid
-Code; Turland et al. 2025)
+A tool for standardized taxonomic headings, in accordance with the
+format of botanical journals and in light of the International Code of
+Nomenclature for Algae, Fungi and Plants (Madrid Code; Turland et
+al. 2025)
 
 ## 🌿 About
 
